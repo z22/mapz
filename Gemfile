@@ -47,4 +47,5 @@ end
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
-
+gem 'guard-livereload', require: false, group: [:development, :test]
+gem 'twitter-bootstrap-rails'

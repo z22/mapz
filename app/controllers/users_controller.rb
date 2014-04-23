@@ -5,6 +5,16 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      marker.infowindow user.notes
+      # marker.picture({
+      #   "url" => "#",
+      #   "width" => 32,
+      #   "height" => 32})
+
+    end
   end
 
   # GET /users/1
@@ -28,7 +38,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to action: 'index', notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }
@@ -42,7 +52,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to action: 'index', notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +79,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:lattitude, :longitude, :address, :notes, :name)
+      params.require(:user).permit(:latitude, :longitude, :address, :notes, :name)
     end
 end

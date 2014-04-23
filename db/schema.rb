@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140422224525) do
 
   create_table "users", force: true do |t|
-    t.float    "lattitude"
+    t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
     t.text     "notes"
