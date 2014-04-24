@@ -52,3 +52,4 @@ gem 'twitter-bootstrap-rails'
 gem 'haml'
 gem 'omniauth-google-apps'
 gem 'bcrypt-ruby', :require => "bcrypt"
+gem 'rspec-rails', group: [:development, :test]

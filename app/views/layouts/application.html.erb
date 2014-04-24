@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash#{name}" %>
+  <% end %>
+
+
+
 <!-- Facebook button in drop down menu -->
 <div id="fb-root"></div>
 
@@ -24,9 +30,9 @@
 <!-- Navigation Bar -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <ul class="nav navbar-nav">
-  <li><a href="new.html" class="navbar-brand">
-<img src="logo.png"></a></li>
-  <li class="active"><a href="#">Map</a></li>
+  <li><a href="new.html" class="brand">
+<img src="globe-blue.jpg"></a></li>
+  <li><%= link_to 'Map', users_path %></li>
   <li><a href="#">Calendar</a></li>
   <li><a href="#">Let's Chat</a></li>
   <li class="dropdown">
@@ -38,6 +44,15 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
        </ul>
       </li>
+
+    <% if current_user %>
+      <li id="logged-in-as">Logged in as <%= current_user.name %></li>
+      <li><%= link_to 'Log Out', log_out_path %>
+    <% else %>
+      <li><%= link_to 'Log In', log_in_path %></li>
+      <li><%= link_to 'Sign Up', sign_up_path %></li>
+    <% end %>
+
   </ul>
 </nav>
 

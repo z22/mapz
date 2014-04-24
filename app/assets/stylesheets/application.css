@@ -15,3 +15,10 @@
 .socials {
   padding: 10px;
 }
+
+#logged-in-as {
+  color: #bbb;
+  margin-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
