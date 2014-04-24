@@ -50,3 +50,5 @@ gem 'underscore-rails'
 gem 'guard-livereload', require: false, group: [:development, :test]
 gem 'twitter-bootstrap-rails'
 gem 'haml'
+gem 'omniauth-google-apps'
+gem 'bcrypt-ruby', :require => "bcrypt"

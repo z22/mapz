@@ -10,14 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
+<div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
@@ -27,10 +34,7 @@
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
