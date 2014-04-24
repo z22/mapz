@@ -4,11 +4,22 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
+  # before_filter :require_user
+
+  def require_user
+    # x = User.where('SELECT COUNT(*) FROM users').count
+    # if x == 0
+    #   redirect_to sign_up_path
+    # else
+      redirect_to log_in_path unless current_user
+    # end
+  end
 
   private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    rescue ActiveRecord::RecordNotFound
   end
 
 
