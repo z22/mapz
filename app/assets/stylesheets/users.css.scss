@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.actions {
+  color: black;
+  font-family: Verdana;
+}
 
 #map {
   margin: auto;
@@ -17,4 +20,28 @@
 .friends {
   margin-bottom: 5px;
   width: 50%;
+}
+
+.signup-bg {
+ /* height:100%;
+  width:100%;*/
+  position:absolute;
+  left:40%;
+  top:20%;
+  background-color: #323B55;
+  color: #fff;
+  font-family: Verdana;
+}
+
+.signup-container {
+  background-color: #323B55;
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  left:0;
+  top:0;
+}
+
+.label-tag-color {
+  color: black;
 }

@@ -110,11 +110,16 @@ samp {
   font-size: 1em;
 }
 button,
-input,
 optgroup,
 select,
 textarea {
   color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  color: black;
   font: inherit;
   margin: 0;
 }
@@ -1649,7 +1654,6 @@ legend {
 label {
   display: inline-block;
   margin-bottom: 5px;
-  font-weight: bold;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;

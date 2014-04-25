@@ -12,6 +12,8 @@
  *= require_tree .
  */
 
+ @import url(http://fonts.googleapis.com/css?family=Poiret+One|Montez|Philosopher|Allura|Trochut|Oxygen:300|Lato:300,400|Titillium+Web|Open+Sans);
+
 .socials {
   padding: 10px;
 }
