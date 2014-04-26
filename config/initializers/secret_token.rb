@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Mapz::Application.config.secret_key_base = 'd9b1bdedbd13a9cd833b4a2f9425e9289b110a1ba8a72ff78b84fc6c92bf1da0a600087a5af8f52c4e1189ede74a3279dc070ab40b7ae49f8a8dcc313b23e852'
+Mapz::Application.config.secret_key_base = ENV['SECRET_TOKEN']

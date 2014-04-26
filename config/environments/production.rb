@@ -77,4 +77,9 @@ Mapz::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+#Add Modernizr to precompiled assets for production
+config.assets.precompile += %w( vendor/modernizr.js )
+
+
 end

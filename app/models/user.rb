@@ -11,10 +11,11 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
 
   geocoded_by :address
-  after_validation :geocode #auto-fetch coordinates
+  after_validation :geocode, if: ->(user){ user.address.present? and user.address_changed? } #auto-fetch coordinates
 
-  has_and_belongs_to_many :groups
-
+  # has_and_belongs_to_many :groups
+  acts_as_group_member
+  acts_as_named_group_member
 
 
   def self.authenticate(email, password)

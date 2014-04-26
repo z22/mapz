@@ -51,9 +51,16 @@ GEM
     eventmachine (1.0.3)
     execjs (2.0.2)
     ffi (1.9.3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formatador (0.2.4)
+    foundation-rails (5.2.2.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     geocoder (1.2.0)
     gmaps4rails (2.1.2)
+    groupify (0.5.1)
     guard (2.6.0)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -194,8 +201,11 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 4.0.0)
+  figaro
+  foundation-rails
   geocoder
   gmaps4rails
+  groupify
   guard-livereload
   haml
   jbuilder (~> 1.2)
