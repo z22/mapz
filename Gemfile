@@ -61,3 +61,4 @@ gem 'rspec-rails', group: [:development, :test]
 gem 'foundation-rails'
 gem 'groupify'
 gem 'figaro' #secret token management
+gem 'omniauth'
