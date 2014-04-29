@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
 
 
   def create
+
+    raise request.env["omniauth.auth"].to_yaml
+
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id

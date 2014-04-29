@@ -1,5 +1,7 @@
 Mapz::Application.routes.draw do
 
+  get "/auth/twitter/callback" => "sessions#create"
+
   resources :groups
   resources :users
   resources :sessions

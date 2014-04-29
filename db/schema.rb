@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425221913) do
+ActiveRecord::Schema.define(version: 20140429225101) do
 
   create_table "assignments", force: true do |t|
     t.datetime "created_at"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20140425221913) do
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uid"
+    t.string   "provider"
   end
 
 end
