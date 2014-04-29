@@ -28,7 +28,7 @@
   width:100%;*/
   position:absolute;
   left:40%;
-  top:20%;
+  top:10%;
   background-color: #323B55;
   color: #fff;
   font-family: Verdana;
@@ -45,4 +45,14 @@
 
 .label-tag-color {
   color: black;
+}
+
+.field label {
+  color: white;
+}
+
+.edit-user-form {
+  label {
+    color: blue;
+  }
 }
