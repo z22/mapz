@@ -6,17 +6,21 @@ class SessionsController < ApplicationController
 
 
   def create
-
-    raise request.env["omniauth.auth"].to_yaml
-
-    user = User.authenticate(params[:email], params[:password])
-    if user
-      session[:user_id] = user.id
-      redirect_to users_path, :notice => "Logged in!"
-    else
-      flash.now.alert = "Invalid email or password"
-      render "new"
-    end
+    # trying out omniauth-twitter using Railscasts
+    auth = request.env["omniauth.auth"]
+    # if auth
+    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+    session[:user_id] = user.id
+    redirect_to users_path, :notice => "Logged in!"
+    # else
+    # user = User.authenticate(params[:email], params[:password])
+    # if user
+    #   session[:user_id] = user.id
+    #   redirect_to users_path, :notice => "Logged in!"
+    # else
+    #   flash.now.alert = "Invalid email or password"
+    #   render "new"
+    # end
   end
 
   def destroy

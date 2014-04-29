@@ -51,7 +51,11 @@
       </li>
 
     <% if current_user %>
-      <li id="logged-in-as">Logged in as <%= current_user.name %></li>
+      <% if current_user.provider.eql?("twitter") %>
+        <li id="logged-in-as">Logged in using Twitter as <%= current_user.name %></li>
+      <% else %>
+        <li id="logged-in-as">Logged in as <%= current_user.name %></li>
+      <% end %>
       <li><%= link_to 'Log Out', log_out_path %>
     <% else %>
       <li><%= link_to 'Log In', log_in_path %></li>
