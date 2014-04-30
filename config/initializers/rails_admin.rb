@@ -40,8 +40,11 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.main_app_name { ['mapz', 'Admin'] }
-  end
+  config.main_app_name { ['My App', 'Admin'] }
+end
+
+
+
 
 
 end
