@@ -62,3 +62,4 @@ gem 'foundation-rails'
 gem 'groupify'
 gem 'figaro' #secret token management
 gem 'omniauth-twitter'
+gem 'rails_admin'

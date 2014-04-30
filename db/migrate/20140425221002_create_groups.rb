@@ -2,7 +2,9 @@ class CreateGroups < ActiveRecord::Migration
   def change
     create_table :groups do |t|
       t.string :type # for using STI-single table inheritance
-      t.references :user
+      t.string :name
+
+      # t.references :user
     end
 
 

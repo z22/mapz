@@ -19,19 +19,19 @@ ActiveRecord::Schema.define(version: 20140429225101) do
   end
 
   create_table "group_memberships", force: true do |t|
-    t.string  "user_type"
-    t.integer "user_id"
+    t.string  "member_type"
+    t.integer "member_id"
     t.integer "group_id"
     t.string  "group_name"
   end
 
   add_index "group_memberships", ["group_id"], name: "index_group_memberships_on_group_id"
   add_index "group_memberships", ["group_name"], name: "index_group_memberships_on_group_name"
-  add_index "group_memberships", ["user_id", "user_type"], name: "index_group_memberships_on_user_id_and_user_type"
+  add_index "group_memberships", ["member_id", "member_type"], name: "index_group_memberships_on_member_id_and_member_type"
 
   create_table "groups", force: true do |t|
-    t.string  "type"
-    t.integer "user_id"
+    t.string "type"
+    t.string "name"
   end
 
   create_table "users", force: true do |t|
