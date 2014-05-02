@@ -11,6 +11,23 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @group = Group.find(params[:id])
+    # @friends will contain only users in this particular group
+    @friends = User.all.in_group(@group).sorted
+    #same as: @friends = @group.users.sorted
+
+
+    @hash = Gmaps4rails.build_markers(@friends) do |friend, marker|
+      marker.lat friend.latitude
+      marker.lng friend.longitude
+      marker.infowindow friend.notes
+      # marker.picture({
+      #   "url" => "#",
+      #   "width" => 32,
+      #   "height" => 32})
+    end
+
+
   end
 
   # GET /groups/new

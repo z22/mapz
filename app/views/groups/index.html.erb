@@ -13,7 +13,6 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= group.name %></td>
-        <!-- <td><%= User.in_group(group) %></td> -->
         <td><%= link_to("View Members", {:controller => 'users', :group_id => group.id}, :class => 'action show') %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
