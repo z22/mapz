@@ -1,5 +1,7 @@
 Mapz::Application.routes.draw do
 
+  resources :friendships
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get "/auth/twitter/callback" => "sessions#create"
 

@@ -34,7 +34,7 @@
 
 <br>
 
-<%= link_to 'Add a friend', new_user_path %>
+<%= link_to 'Add a friend', friendships_path(:friend_id => user), :method => :post %>
 
 <br>
 <br>

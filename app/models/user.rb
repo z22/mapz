@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessor :password
+  attr_accessor :password # keeps the plain text password in an instance variable before encryption
   before_save :encrypt_password
   before_save { self.email = email.downcase }
 
@@ -13,11 +13,22 @@ class User < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, if: ->(user){ user.address.present? and user.address_changed? } #auto-fetch coordinates
 
-  # has_and_belongs_to_many :groups
+  # groupify gem
   acts_as_group_member
   acts_as_named_group_member
 
   scope :sorted, lambda { order("users.name ASC") }
+
+  #self-association
+  #need? :dependent => :destroy
+  has_many :friendships
+  has_many :friends, :through => :friendships
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key =>"friend_id"
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
+
+
+
 
   def self.authenticate(email, password)
     user = find_by(:email => email)
