@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
 
   # before_filter :require_user
 
+  #basic auth, used while working on app
+  before_filter :site_login_required
+
+
+
   def require_user
     # x = User.where('SELECT COUNT(*) FROM users').count
     # if x == 0
@@ -22,6 +27,10 @@ class ApplicationController < ActionController::Base
     rescue ActiveRecord::RecordNotFound
   end
 
-
+  def site_login_required
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "m" && password == "z"
+    end
+  end
 
 end
