@@ -5,7 +5,9 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    # @groups = Group.all
+    # only list groups that the current_user is in
+    @groups = Group.with_member(current_user)
   end
 
   # GET /groups/1

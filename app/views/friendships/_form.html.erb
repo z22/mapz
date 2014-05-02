@@ -27,7 +27,10 @@
     <%= f.label :destroy %><br>
     <%= f.text_field :destroy %>
   </div>
-  <div class="actions">
+  <!-- <div class="actions">
     <%= f.submit %>
-  </div>
+  </div> -->
+  <%= submit_tag 'Cancel', :class => 'form-button' %>
+  <%= submit_tag 'Save', :class => 'form-button' %>
+
 <% end %>

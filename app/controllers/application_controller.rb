@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user
-
+  before_filter :check_for_cancel_back_to_show, :only => [:delete, :update]
+  before_filter :check_for_cancel_back_to_index, :only => [:create]
   # before_filter :require_user
 
   #basic auth, used while working on app
@@ -18,6 +19,19 @@ class ApplicationController < ActionController::Base
     # else
       redirect_to log_in_path unless current_user
     # end
+  end
+
+
+  def check_for_cancel_back_to_show
+    if params[:commit] == "Cancel"
+      redirect_to :action => 'show'
+    end
+  end
+
+  def check_for_cancel_back_to_index
+    if params[:commit] == "Cancel"
+      redirect_to :action => 'index'
+    end
   end
 
   private
