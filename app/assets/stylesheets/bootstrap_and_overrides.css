@@ -32,3 +32,14 @@ body { padding-top: 50px; }
 // Example:
 // @linkColor: #ff0000;
 
+
+.jumbotron {
+    background-color: transparent !important;
+    margin-bottom: 0px;
+    background-image: url(../img/sittingonbench.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}

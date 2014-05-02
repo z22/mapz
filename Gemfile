@@ -63,3 +63,4 @@ gem 'groupify'
 gem 'figaro' #secret token management
 gem 'omniauth-twitter'
 gem 'rails_admin'
+gem 'bootstrap-sass'
