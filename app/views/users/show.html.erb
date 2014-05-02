@@ -1,50 +1,51 @@
 <p id="notice"><%= notice %></p>
 
+<h1 class="profile-header">
+  <%= "#{@user.name}'s Profile" %>
+</h1>
+
 <p>
-  <strong>latitude:</strong>
+  <strong>City:</strong>
+  <%= @user.address %>
+</p>
+
+<!-- <p>
+  <strong>Latitude:</strong>
   <%= @user.latitude %>
 </p>
 
 <p>
   <strong>Longitude:</strong>
   <%= @user.longitude %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
+</p> -->
 
 <p>
   <strong>Notes:</strong>
   <%= @user.notes %>
 </p>
 
-<p>
-  <strong>Name:</strong>s
-  <%= @user.name %>
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'All Users', users_path %>
+
 
 <!-- Friends -->
 
-<h2>Friends</h2>
+<h2>Friends:</h2>
 <ul>
   <% for friendship in @user.friendships %>
     <li>
-      <%=h friendship.friend.name %>
+      <%=h link_to friendship.friend.name, user_path(friendship.friend.id) %>
       (<%= link_to "remove", friendship, :method => :delete %>)
     </li>
   <% end %>
 </ul>
 
-<p><%= link_to "Find Friends", users_path %></p>
+<p><%= link_to "Find More Friends", users_path %></p>
 
-<h2>Friended by Users</h2>
+<h2>Friended by:</h2>
 <ul>
   <% for user in @user.inverse_friends %>
-    <li><%=h user.username %></li>
+    <li><%=h link_to user.name, user_path(user.id) %></li>
   <% end %>
 </ul>

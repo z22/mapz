@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :find_group
 
-  # GET /users
-  # GET /users.json
   def index
     if @group
       @users = @group.users.sorted
@@ -23,41 +21,30 @@ class UsersController < ApplicationController
 
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
     @user = User.find(params[:id])
     # @friends = User.friends
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
   end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to action: 'index', notice: 'Signed up!' }
-        format.json { render action: 'show', status: :created, location: @user }
+        flash[:notice] = 'Thank you for signing up! You are now logged in.'
+        redirect_to users_path
       else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render :action => 'new'
       end
-    end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -70,8 +57,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+
   def destroy
     @user.destroy
     respond_to do |format|
@@ -96,4 +82,6 @@ class UsersController < ApplicationController
         @group = Group.find(params[:group_id])
       end
     end
+
+
 end

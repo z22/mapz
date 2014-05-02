@@ -3,10 +3,24 @@ class FriendshipsController < ApplicationController
 
 
   def index
-    @friendships = Friendship.all
+    # @friendships = Friendship.all
+
+    @friendships = current_user.friendships
+
+    @hash = Gmaps4rails.build_markers(@friendships) do |friendship, marker|
+      marker.lat friendship.friend.latitude
+      marker.lng friendship.friend.longitude
+      marker.infowindow friendship.friend.notes
+      # marker.picture({
+      #   "url" => "#",
+      #   "width" => 32,
+      #   "height" => 32})
+    end
   end
 
   def show
+    @user = User.find(params[:id])
+
   end
 
   def new
@@ -18,15 +32,6 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @friendship.update(friendship_params)
-        format.html { redirect_to @friendship, notice: 'Friendship was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @friendship.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
 
@@ -35,7 +40,7 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
 
       if @friendship.save
-       falsh[:notice] = "Added friend."
+       flash[:notice] = "Added friend."
        redirect_to root_url
       else
         flash[:error] = "Unable to add friend."

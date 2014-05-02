@@ -26,8 +26,6 @@ class GroupsController < ApplicationController
       #   "width" => 32,
       #   "height" => 32})
     end
-
-
   end
 
   # GET /groups/new
