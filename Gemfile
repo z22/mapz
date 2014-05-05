@@ -64,3 +64,6 @@ gem 'figaro' #secret token management
 gem 'omniauth-twitter'
 gem 'rails_admin'
 gem 'bootstrap-sass'
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
+gem 'less-rails'
