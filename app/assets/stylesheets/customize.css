@@ -2,6 +2,8 @@
 .navbar {
   background-image: linear-gradient(45deg, rgb(2, 0, 49) 0%, rgb(109, 51, 83) 100%);
   margin-bottom: 0;
+  border: none;
+  border-radius: 0;
 }
 
 th {
@@ -17,6 +19,18 @@ th {
   border: none;
 }
 
+/*Home page*/
+
+.jumbo-overlay {
+  background: rgba(0,0,0,0.4);
+  height: 600px;
+  width: 100%;
+  padding: 0;
+}
+.jumbo-blackbg {
+  background-color: #555;
+}
+
 .jumbotron {
   text-decoration: none;
   /*background: rgba(0, 0, 0, 0.6);*/
@@ -26,10 +40,16 @@ th {
  .jumbotron h1 {
     font-family: Oxygen;
     font-weight: 700;
+    padding-left: 110px;
+    padding-right: 110px;
+    color: #eee;
   }
 
   .jumbotron p {
-    font-family: Lato;
+    font-family: Quattrocento Sans;
+    padding-left: 110px;
+    padding-right: 110px;
+    line-height: 25px;
   }
 
 .container.jumbo {
@@ -45,10 +65,7 @@ th {
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    padding: 0;
   }
 
-
-.row.home-thumbnails {
-  /*background-color: #ddd;*/
-}
 
