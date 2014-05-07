@@ -14,33 +14,7 @@
 
  @import url(http://fonts.googleapis.com/css?family=Poiret+One|Montez|Philosopher|Allura|Trochut|Oxygen:300,700|Lato:300,400|Titillium+Web|Open+Sans|Quattrocento+Sans);
 
-.dropdown-menu {
-  background-color: #772953 !important;
-}
 
-.dropdown-item {
-  text-align: center;
-  background-color: #772953;
-  color: white !important;
- a {
-    text-decoration: none;
-    &:link {
-      color: white;
-    }
-    &:hover {
-    /*to edit, search files for dropdown menu hover in bootstrap.js*/
-    /*background-color: #642246 !important;*/
-    }
-  }
-}
-
-
-#logged-in-as {
-  color: #bbb;
-  margin-top: 15px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
 
 .form-button {
   background-color:#57C2F7;

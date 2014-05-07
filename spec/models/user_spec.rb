@@ -14,4 +14,6 @@ describe User do
     before { @user.name = " " }
     it { should_not be_valid }
   end
+
+
 end

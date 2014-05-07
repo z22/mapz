@@ -10,8 +10,6 @@ Mapz::Application.routes.draw do
   resources :sessions
   resources :chats
 
-  get "home/index"
-
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
@@ -20,7 +18,7 @@ Mapz::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'sessions#new'
+  root 'home#index'
 
 
   # Example of regular route:

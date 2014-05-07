@@ -6,6 +6,42 @@
   border-radius: 0;
 }
 
+.nav {
+  padding-top: 5px;
+}
+
+.dropdown-menu {
+  background-color: #772953 !important;
+}
+
+.dropdown-menu > li > a {
+  color: white;
+}
+
+.dropdown-item {
+  text-align: center;
+  background-color: #772953;
+  color: white !important;
+ a {
+    text-decoration: none;
+    &:link {
+      color: white;
+    }
+    &:hover {
+    /*to edit, search files for dropdown menu hover in bootstrap.js*/
+    /*background-color: #642246 !important;*/
+    }
+  }
+}
+
+
+#logged-in-as {
+  color: #bbb;
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 th {
   background-color: #777;
   color: #772953;
@@ -15,9 +51,12 @@ th {
 }
 
 .btn {
-  background-color: #020031;
+  background-color: #772953;
   border: none;
+  background-image: linear-gradient(45deg, rgb(2, 0, 49) 0%, rgb(109, 51, 83) 100%);
 }
+
+
 
 /*Home page*/
 

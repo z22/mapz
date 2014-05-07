@@ -33,4 +33,21 @@ Mapz::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+
+
+# ActionMailer::Base.delivery_method = :smtp
+# ActionMailer::Base.smtp_settings = {
+config.action_mailer.default_url_options = { :host => 'http://127.0.0.1:3000' }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+:enable_starttls_auto => true,
+:address => "smtp.gmail.com",
+:port => 587,
+:domain => "mapzapp.herokuapp.com",
+:user_name => ENV["GMAIL_USERNAME"],
+:password => ENV["GMAIL_PASSWORD"],
+:authentication => "plain",
+:enable_starttls_auto => true
+}
 end
