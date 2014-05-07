@@ -81,6 +81,8 @@ Mapz::Application.configure do
 #Add Modernizr to precompiled assets for production
 config.assets.precompile += %w( vendor/modernizr.js )
 
+  #rails admin
+  config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
