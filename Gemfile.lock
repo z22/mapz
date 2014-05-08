@@ -42,9 +42,20 @@ GEM
     bcrypt (3.1.7)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.1.4)
+    capybara (2.2.1)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     celluloid-io (0.15.0)
@@ -59,14 +70,41 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     commonjs (0.2.7)
+    cucumber (1.3.14)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.12)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.1.1)
+    cucumber-rails (1.4.0)
+      capybara (>= 1.1.2)
+      cucumber (>= 1.2.0)
+      nokogiri (>= 1.5.0)
+      rails (>= 3.0.0)
+    database_cleaner (1.2.0)
+    debug_inspector (0.0.2)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
+    email_spec (1.5.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
     extlib (0.9.16)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
@@ -76,10 +114,9 @@ GEM
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
-    foundation-rails (5.2.2.0)
-      railties (>= 3.1.0)
-      sass (>= 3.2.0)
     geocoder (1.2.0)
+    gherkin (2.12.2)
+      multi_json (~> 1.3)
     gmaps4rails (2.1.2)
     google-api-client (0.7.1)
       addressable (>= 2.3.2)
@@ -147,6 +184,7 @@ GEM
     mini_portile (0.5.3)
     minitest (4.7.5)
     multi_json (1.9.2)
+    multi_test (0.1.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nested_form (0.3.2)
@@ -174,12 +212,15 @@ GEM
     omniauth-twitter (1.0.1)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-pjax (0.7.0)
       nokogiri (~> 1.5)
@@ -288,16 +329,27 @@ GEM
       json (>= 1.8.0)
     underscore-rails (1.6.0)
     uuidtools (2.1.4)
+    warden (1.2.3)
+      rack (>= 1.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bcrypt-ruby
+  better_errors (>= 0.3.2)
+  binding_of_caller (>= 0.6.8)
   bootstrap-sass
+  capybara (>= 2.0.2)
   coffee-rails (~> 4.0.0)
+  cucumber-rails (>= 1.3.0)
+  database_cleaner (>= 0.9.1)
+  devise (>= 2.2.3)
+  email_spec (>= 1.4.0)
+  factory_girl_rails (>= 4.2.0)
   figaro
-  foundation-rails
   geocoder
   gmaps4rails
   google-api-client
@@ -306,12 +358,14 @@ DEPENDENCIES
   haml
   jbuilder (~> 1.2)
   jquery-rails
+  launchy (>= 2.1.2)
   less-rails
   less-rails-bootstrap
   omniauth
   omniauth-google-oauth2!
   omniauth-twitter
   pg
+  quiet_assets (>= 1.0.1)
   rails (= 4.0.2)
   rails_12factor
   rails_admin
