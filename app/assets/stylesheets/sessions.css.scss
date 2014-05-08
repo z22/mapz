@@ -33,3 +33,17 @@
 .login-container label {
   color: white;
 }
+
+.pass-reset-link a {
+  color: white;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.signup-link a {
+  color: white;
+  &:hover {
+    background-color: transparent;
+  }
+}

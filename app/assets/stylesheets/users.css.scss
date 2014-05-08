@@ -62,3 +62,10 @@
     color: blue;
   }
 }
+
+.login-link a {
+  color: white;
+  &:hover {
+    background-color: transparent;
+  }
+}
