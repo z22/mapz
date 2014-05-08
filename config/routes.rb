@@ -1,5 +1,6 @@
 Mapz::Application.routes.draw do
 
+  get "password_resets/new"
   get "calendar/index"
   resources :friendships
 
@@ -11,6 +12,7 @@ Mapz::Application.routes.draw do
   resources :users
   resources :sessions
   resources :chats
+  resources :password_resets
 
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"

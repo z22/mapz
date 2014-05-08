@@ -42,6 +42,7 @@ class UsersController < ApplicationController
         flash[:notice] = 'Thank you for signing up! You are now logged in.'
         redirect_to root_path
       else
+        flash[:notice] = "Invalid email or password"
         render :action => 'new'
       end
   end
