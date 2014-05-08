@@ -1,9 +1,11 @@
 Mapz::Application.routes.draw do
 
+  get "calendar/index"
   resources :friendships
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get "/auth/twitter/callback" => "sessions#create"
+  get "/auth/:provider/callback" => "sessions#create"
+
 
   resources :groups
   resources :users

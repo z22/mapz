@@ -33,14 +33,14 @@ RailsAdmin.config do |config|
   end
 
 # Without Devise: https://gist.github.com/grosser/1278355
-  RailsAdmin.config do |config|
+RailsAdmin.config do |config|
   config.authorize_with do
     authenticate_or_request_with_http_basic('Site Message') do |username, password|
       username == 'm' && password == 'z'
     end
   end
 
-  config.main_app_name { ['My App', 'Admin'] }
+  config.main_app_name { ['Mapz', 'Admin'] }
 end
 
 

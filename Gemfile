@@ -55,16 +55,21 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'guard-livereload', require: false, group: [:development, :test]
 gem 'twitter-bootstrap-rails'
-gem 'haml'
-gem 'omniauth-google-apps'
-gem 'bcrypt-ruby', :require => "bcrypt"
-gem 'rspec-rails', group: [:development, :test]
-gem 'foundation-rails'
-gem 'groupify'
-gem 'figaro' #secret token management
-gem 'omniauth-twitter'
-gem 'rails_admin'
 gem 'bootstrap-sass'
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
 gem 'less-rails'
+gem 'haml'
+# gem 'omniauth-google-apps'
+gem 'bcrypt-ruby', :require => "bcrypt"
+gem 'rspec-rails', group: [:development, :test]
+gem 'groupify'
+gem 'figaro' #secret token management
+gem 'omniauth-twitter'
+gem 'rails_admin'
+
+gem 'google-api-client', :require => 'google/api_client'
+gem 'omniauth'
+gem 'omniauth-google-oauth2', :git => 'https://github.com/zquestz/omniauth-google-oauth2.git'
+
+

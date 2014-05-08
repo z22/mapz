@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
 
   validates_presence_of :name
-  validates_presence_of :address
+  # validates_presence_of :address
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
-  validates_presence_of :password, :on => :create
+  validates_presence_of :password, :on => :create unless ->(user){ self.provider.present? }
   validates_confirmation_of :password
 
   geocoded_by :address
@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
+      user.email = result.data.email
     end
   end
 
