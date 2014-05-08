@@ -6,6 +6,11 @@ body {
   line-height: 18px;
 }
 
+/*styling for navbar links */
+.navbar-inverse .brand, .navbar-inverse .nav >li > a {
+  color: #ddd;
+}
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -18,16 +23,16 @@ pre {
   font-size: 11px;
 }
 
-a {
+/*a {
   color: #000;
   &:visited {
-    color: #666;
+    color: #fff;
   }
   &:hover {
     color: #fff;
     background-color: #000;
   }
-}
+}*/
 
 div {
   &.field, &.actions {
