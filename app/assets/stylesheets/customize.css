@@ -96,7 +96,7 @@ th {
 
 .container.jumbo {
     margin-bottom: 150px;
-    background-image: url('sittingonbench.jpg');
+    background: image-url('sittingonbench.jpg');
     background-position: center;
     /*background-size: cover;*/
     background-size: auto;
